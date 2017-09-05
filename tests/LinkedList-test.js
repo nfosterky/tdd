@@ -1,6 +1,7 @@
 import { expect } from 'chai';
 import Node from '../scripts/Node'
 import LinkedList from '../scripts/LinkedList'
+import locus from 'locus';
 
 describe('LINKED LIST', () => {
   let list;
@@ -32,7 +33,7 @@ describe('LINKED LIST', () => {
   })
 
   describe('SHIFT', () => {
-    it.skip('should remove items from the front of list / head', () => {
+    it('should remove items from the front of list / head', () => {
       let result = list.shift();
 
       // return null if list empty
@@ -44,15 +45,19 @@ describe('LINKED LIST', () => {
       expect(list.length).to.equal(2)
       expect(list.head.data).to.equal('duck')
 
+      eval(locus);
+
       // multiple items in list
       result = list.shift();
 
+      expect(list.length).to.equal(1)
       expect(result.data).to.equal('duck')
       expect(list.head.data).to.equal('hamburger')
-
-      // one item in list
+      //
+      // // one item in list
       result = list.shift();
 
+      expect(list.length).to.equal(0)
       expect(result.data).to.equal('hamburger')
       expect(list.head).to.equal(null)
     })

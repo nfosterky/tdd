@@ -11,9 +11,22 @@ export default class LinkedList {
 
     node.next = this.head;
     this.head = node;
-    console.log(this.head);
 
     this.length++;
+  }
+
+  shift() {
+    const shifted = this.head;
+
+    if (this.length === 0) {
+      return shifted;
+    }
+
+    this.length--;
+
+    this.head = this.head.next;
+
+    return shifted;
   }
 
 }
