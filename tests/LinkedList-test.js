@@ -1,12 +1,12 @@
 import { expect } from 'chai';
 import Node from '../scripts/Node'
-import List from '../scripts/LinkedList'
+import LinkedList from '../scripts/LinkedList'
 
 describe('LINKED LIST', () => {
   let list;
 
   beforeEach(() => {
-    list = new List();
+    list = new LinkedList();
   });
 
   it('should start with zero elements', () => {
@@ -18,7 +18,7 @@ describe('LINKED LIST', () => {
   });
 
   describe('UNSHIFT', () => {
-    it.skip('should add items to front of list / head', () => {
+    it('should add items to front of list / head', () => {
       list.unshift('pizza');
 
       expect(list.length).to.equal(1)
