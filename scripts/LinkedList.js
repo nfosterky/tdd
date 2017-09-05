@@ -53,4 +53,68 @@ export default class LinkedList {
     return this.length
   }
 
+  pop() {
+    if (this.length === 0) {
+      return this.head;
+
+    } else if (this.length === 1) {
+      let popped = this.head;
+
+      this.head = null;
+      this.length--;
+
+      return popped;
+
+    } else {
+      let prevNode = this.head;
+
+      // find last node of current list
+      while (prevNode.next.next !== null) {
+        prevNode = prevNode.next;
+      }
+
+      let popped = prevNode.next;
+
+      // set prevNode.next to null;
+      prevNode.next = null;
+      this.length--;
+
+      return popped;
+    }
+  }
+
+  find(data) {
+    let currentNode = this.head;
+
+    while (currentNode !== null && currentNode.data !== data) {
+      currentNode = currentNode.next
+    }
+
+    return currentNode;
+  }
+
+  delete(data) {
+    let currentNode = this.head;
+    let prevNode;
+
+    if (this.length === 1 && currentNode.data === data) {
+      let popped = this.head;
+
+      this.head = null;
+      this.length--;
+
+      return popped;
+    }
+
+    while (currentNode !== null && currentNode.data !== data) {
+      prevNode = currentNode;
+      currentNode = currentNode.next;
+    }
+
+    if (currentNode !== null && currentNode.data === data) {
+      this.length--;
+      prevNode.next = null;
+    }
+
+  }
 }
