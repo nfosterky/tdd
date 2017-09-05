@@ -29,4 +29,28 @@ export default class LinkedList {
     return shifted;
   }
 
+  push(data) {
+    let newNode = new Node(data);
+
+    // if list is empty set new node to list.head
+    if (this.head === null) {
+      this.head = newNode;
+
+    } else {
+      let currentNode = this.head;
+
+      // find last node of current list
+      while (currentNode.next !== null) {
+        currentNode = currentNode.next;
+      }
+
+      // set lastNode.next === new node
+      currentNode.next = newNode;
+    }
+
+    this.length++;
+
+    return this.length
+  }
+
 }

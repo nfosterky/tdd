@@ -45,8 +45,6 @@ describe('LINKED LIST', () => {
       expect(list.length).to.equal(2)
       expect(list.head.data).to.equal('duck')
 
-      eval(locus);
-
       // multiple items in list
       result = list.shift();
 
@@ -64,24 +62,24 @@ describe('LINKED LIST', () => {
   })
 
   describe('PUSH', () => {
-    it.skip('should allow push of a single element to a list', () => {
+    it('should allow push of a single element to a list', () => {
       list.push('pizza');
       expect(list.head.data).to.eq('pizza');
     });
 
-    it.skip('should increment the length of the list', () => {
+    it('should increment the length of the list', () => {
       list.push('pizza');
       expect(list.length).to.eq(1);
     });
 
-    it.skip('should increment the length count', () => {
+    it('should increment the length count', () => {
       list.push('pizza');
       list.push('stromboli');
       list.push('mushroom');
       expect(list.length).to.eq(3);
     });
 
-    it.skip('should assign the head to the first element pushed', () => {
+    it('should assign the head to the first element pushed', () => {
       expect(list.head).to.eq(null);
 
       list.push('pizza');
