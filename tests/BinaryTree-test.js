@@ -170,7 +170,78 @@ describe('BinaryTree', () => {
     });
   });
 
-  describe('getSum', () => {});
+  describe('getSum', () => {
+    it('should return null if no elements', () => {
+      let tree = new BinaryTree();
+
+      expect(tree.getSum()).to.equal(null);
+    });
+
+    it('should return sum for one node', () => {
+      let tree = new BinaryTree();
+
+      tree.insert(10);
+
+      expect(tree.getSum()).to.equal(10);
+    })
+
+    it('should return sum for one node', () => {
+      let tree = new BinaryTree();
+
+      tree.insert(20);
+
+      expect(tree.getSum()).to.equal(20);
+    })
+
+    it('should return sum for multiple node datas', () => {
+      let tree = new BinaryTree();
+
+      tree.insert(20);
+      tree.insert(5);
+      tree.insert(25);
+      tree.insert(50);
+
+      expect(tree.getSum()).to.equal(100);
+    })
+
+    it('should return sum for multiple node datas', () => {
+      let tree = new BinaryTree();
+
+      tree.insert(20);
+      tree.insert(5);
+      tree.insert(25);
+      tree.insert(50);
+
+      expect(tree.getSum2()).to.equal(100);
+    })
+  })
+
+  // describe('getSum', () => {
+  //   it('should return 0, if empty', () => {
+  //     let tree = new BinaryTree();
+  //
+  //     expect(tree.getSum()).to.equal(0);
+  //   })
+  //
+  //   it('should return sum if only one item', () => {
+  //     let tree = new BinaryTree();
+  //
+  //     tree.insert(10);
+  //
+  //     expect(tree.getSum()).to.equal(10);
+  //   })
+  //
+  //   it('should return sum with several items', () => {
+  //     let tree = new BinaryTree();
+  //
+  //     tree.insert(10);
+  //     tree.insert(5);
+  //     tree.insert(15);
+  //     tree.insert(20);
+  //
+  //     expect(tree.getSum2()).to.equal(50);
+  //   })
+  // });
 
   describe('delete', () => {
     beforeEach(() => {
