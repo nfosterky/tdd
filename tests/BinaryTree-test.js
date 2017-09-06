@@ -114,35 +114,38 @@ describe('BinaryTree', () => {
 
     });
 
-    it.skip('should return null if no match is found', () => {
+    it('should return null if no match is found', () => {
+      let node = tree.find(8);
 
+      expect(node).to.equal(null);
     });
 
-    it.skip('should be able to find the root', () => {
+    it('should be able to find the root', () => {
       let node = tree.find(4);
 
       expect(node).to.equal(tree.root);
     });
 
-    it.skip('should be able to find results to the immediate left (2)', () => {
+    it('should be able to find results to the immediate left (2)', () => {
+      // eval(locus)
       let node = tree.find(2);
 
       expect(node).to.equal(tree.root.left);
     });
 
-    it.skip('should be able to find results to the far left (1)', () => {
+    it('should be able to find results to the far left (1)', () => {
       let node = tree.find(1);
 
       expect(node).to.equal(tree.root.left.left);
     });
 
-    it.skip('should be able to find results to the immediate right (6)', () => {
+    it('should be able to find results to the immediate right (6)', () => {
       let node = tree.find(6);
 
       expect(node).to.equal(tree.root.right);
     });
 
-    it.skip('should be able to find nested results (5 and 3)', () =>  {
+    it('should be able to find nested results (5 and 3)', () =>  {
       let node = tree.find(5);
 
       expect(node).to.equal(tree.root.right.left)

@@ -67,4 +67,38 @@ export default class BinaryTree {
 
     return currentNode.data;
   }
+
+  findDirection(a, b) {
+    return a <= b ? 'right' : 'left'
+  }
+
+  find(data) {
+    let currentNode = this.root;
+
+    // Compare given data and current node's data
+    // Determine direction based on comparison
+    let direction = this.findDirection(currentNode.data, data)
+
+    // console.log('direction: ', direction);
+
+    // Check to see if node exists in the direction we want
+    while (currentNode[direction] !== null && data !== currentNode.data) {
+    // If it exists, make that the current node
+      currentNode = currentNode[direction];
+
+      // Compare again for direction
+      direction = this.findDirection(currentNode.data, data);
+    }
+
+    return currentNode.data === data ? currentNode : null;
+  }
+
+
+
+
+
+
+
+
+
 }
