@@ -35,4 +35,36 @@ export default class BinaryTree {
 
     }
   }
+
+  min() {
+    // if (!this.root)
+    if (this.root === null) {
+      return null;
+    }
+
+    // find left most node and return it
+    let currentNode = this.root;
+
+    while (currentNode.left !== null) {
+      currentNode = currentNode.left;
+    }
+
+    return currentNode.data;
+  }
+
+  max() {
+    // find right most node and return it
+    if (this.root === null) {
+      return null;
+    }
+
+    // find left most node and return it
+    let currentNode = this.root;
+
+    while (currentNode.right !== null) {
+      currentNode = currentNode.right;
+    }
+
+    return currentNode.data;
+  }
 }
