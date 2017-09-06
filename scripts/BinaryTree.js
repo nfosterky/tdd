@@ -77,6 +77,7 @@ export default class BinaryTree {
       currentNode = currentNode[direction];
 
       direction = currentNode.data <= data ? 'left' : 'right';
+
     }
 
     return currentNode.data === data ? currentNode : null;
