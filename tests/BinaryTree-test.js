@@ -50,7 +50,7 @@ describe('BinaryTree', () => {
       expect(tree.root.left.left.data).to.equal(5);
     });
 
-    it.skip('should continue adding larger data to the right down the tree', () => {
+    it('should continue adding larger data to the right down the tree', () => {
       tree.insert(20);
       tree.insert(30);
       tree.insert(35);

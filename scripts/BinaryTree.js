@@ -6,9 +6,11 @@ export default class BinaryTree {
   }
 
   insert(data) {
+    let nodeToInsert = new Node(data);
+
     // check if node exists
     if (!this.root) {
-      this.root = new Node(data);
+      this.root = nodeToInsert;
       return;
     }
 
@@ -16,26 +18,21 @@ export default class BinaryTree {
 
     // find destination of new node
     while(currentNode !== null) {
+      let direction;
 
       // compare data with node data
-      if (data <= currentNode.data) {
+      direction = data <= currentNode.data ? 'left' : 'right';
 
-        // move to currentNode.left if it exists
-        if (currentNode.left) {
-          currentNode = currentNode.left;
+      // if node exists, move to node
+      if (currentNode[direction]) {
+        currentNode = currentNode[direction];
 
-        // else put new node there
-        } else {
-          currentNode.left = new Node(data);
-          return;
-        }
-
+      // else put new node there
       } else {
-        currentNode.right = new Node(data);
+        currentNode[direction] = nodeToInsert;
         return;
       }
+
     }
-
-
   }
 }
