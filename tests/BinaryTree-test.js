@@ -115,24 +115,6 @@ describe('BinaryTree', () => {
 
   });
 
-  describe('toArray', () => {
-    it.skip('should return an empty array if no nodes exist', () => {
-      let tree = new BinaryTree();
-
-      expect(tree.toArray()).to.deep.equal([]);
-    });
-
-    it.skip('should return data from the tree into an array, starting with the root, then all left values, then all right', () => {
-      tree.insert(5);
-      tree.insert(3);
-      tree.insert(6);
-      tree.insert(7);
-      tree.insert(4);
-
-      expect(tree.toArray()).to.deep.equal([3, 4, 5, 6, 7]);
-    });
-  });
-
   describe('min and max', () => {
 
     it.skip('min should return null if no nodes exist', () => {
@@ -163,6 +145,24 @@ describe('BinaryTree', () => {
 
     it.skip('should find the max value', () => {
       expect(tree.max()).to.equal(7);
+    });
+  });
+
+  describe('toArray', () => {
+    it.skip('should return an empty array if no nodes exist', () => {
+      let tree = new BinaryTree();
+
+      expect(tree.toArray()).to.deep.equal([]);
+    });
+
+    it.skip('should return data from the tree into an array, starting with the root, then all left values, then all right', () => {
+      tree.insert(5);
+      tree.insert(3);
+      tree.insert(6);
+      tree.insert(7);
+      tree.insert(4);
+
+      expect(tree.toArray()).to.deep.equal([3, 4, 5, 6, 7]);
     });
   });
 
