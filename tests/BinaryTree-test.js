@@ -1,5 +1,6 @@
 import { expect } from 'chai';
 import BinaryTree from '../scripts/BinaryTree';
+import locus from 'locus'
 
 describe('BinaryTree', () => {
   let tree;
@@ -8,39 +9,40 @@ describe('BinaryTree', () => {
     tree = new BinaryTree();
   });
 
-  it.skip('should have a root node defaulted to null', () => {
+  it('should have a root node defaulted to null', () => {
     expect(tree.root).to.equal(null);
   });
 
   describe('insert', () => {
-    it.skip('should be able to add a node to the Tree', () => {
+    it('should be able to add a node to the Tree', () => {
       tree.insert(20);
 
       expect(tree.root.data).to.equal(20);
     });
 
-    it.skip('should move smaller data to the left', () => {
+    it('should move smaller data to the left', () => {
       tree.insert(20);
       tree.insert(5);
 
       expect(tree.root.left.data).to.equal(5);
     });
 
-    it.skip('should move larger data to the right', () => {
+    it('should move larger data to the right', () => {
       tree.insert(20);
       tree.insert(30);
 
+      expect(tree.root.data).to.equal(20);
       expect(tree.root.right.data).to.equal(30);
     });
 
-    it.skip('should add data equal to the rootNode to the left', () => {
+    it('should add data equal to the rootNode to the left', () => {
       tree.insert(20);
       tree.insert(20);
 
       expect(tree.root.left.data).to.equal(20);
     });
 
-    it.skip('should continue adding smaller data to the left down the tree', () => {
+    it('should continue adding smaller data to the left down the tree', () => {
       tree.insert(20);
       tree.insert(10);
       tree.insert(5);
@@ -188,7 +190,7 @@ describe('BinaryTree', () => {
       tree.insert(1);
     });
 
-    it('should delete node with no children', () => {
+    it.skip('should delete node with no children', () => {
       let node = tree.find(1);
 
       expect(tree.root.left.left).to.equal(node);
@@ -198,7 +200,7 @@ describe('BinaryTree', () => {
       expect(tree.root.left.left).to.equal(null);
     })
 
-    it('should delete node with one child', () => {
+    it.skip('should delete node with one child', () => {
       let node = tree.find(1);
 
       expect(tree.root.left.left).to.equal(node);
@@ -216,7 +218,7 @@ describe('BinaryTree', () => {
       expect(tree.root.right.right.right).to.equal(null)
     })
 
-    it('should delete node with two children', () => {
+    it.skip('should delete node with two children', () => {
       let node = tree.find(7);
 
       expect(tree.root.right.right).to.equal(node);
