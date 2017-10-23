@@ -41,16 +41,18 @@ describe('LINKED LIST', () => {
       list.unshift('hamburger');
       list.unshift('duck');
 
+      // multiple items in list
       expect(list.length).to.equal(2)
       expect(list.head.data).to.equal('duck')
 
-      // multiple items in list
       result = list.shift();
 
       expect(result.data).to.equal('duck')
-      expect(list.head.data).to.equal('hamburger')
 
       // one item in list
+      expect(list.length).to.equal(1)
+      expect(list.head.data).to.equal('hamburger')
+
       result = list.shift();
 
       expect(result.data).to.equal('hamburger')
